@@ -1,0 +1,1424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="B2BprojectDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BussinessTypes">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+          </Key>
+          <Property Name="BusinessId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BusinessName" Type="varchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="BuyerDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Designation" Type="varchar(max)" />
+          <Property Name="OrgnizationName" Type="varchar(max)" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="CountryName" Type="varchar(max)" />
+          <Property Name="Phone" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="WebSite" Type="varchar(max)" />
+          <Property Name="BuyerEquiryMsg" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="CategoriesType">
+          <Key>
+            <PropertyRef Name="CategoryTypeId" />
+          </Key>
+          <Property Name="CategoryTypeId" Type="bigint" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+          <Property Name="CategoryDiscription" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="CitiMaster">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="128" />
+          <Property Name="StateId" Type="int" />
+        </EntityType>
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContactId" Type="bigint" />
+          <Property Name="CompanyName" Type="varchar(max)" />
+          <Property Name="CompanyDiscription" Type="varchar(max)" />
+          <Property Name="CompanyKeyword" Type="varchar(max)" />
+          <Property Name="CompanyOwner" Type="varchar" MaxLength="286" />
+          <Property Name="CompanayEstablishedyear" Type="varchar" MaxLength="50" />
+          <Property Name="ComapanyTotalEmployees" Type="bigint" />
+          <Property Name="CompanyAnnualInCome" Type="bigint" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="companyGST" Type="varchar(max)" />
+          <Property Name="City" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
+          <Property Name="CompanyCountry" Type="varchar(max)" />
+          <Property Name="compapprovalbody" Type="varchar(max)" />
+          <Property Name="Uploadlogo" Type="varchar(max)" />
+          <Property Name="UploadcompanyphotoOn" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="CompanyBusiness">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BusinessId" Type="bigint" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="UpdatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="varchar" MaxLength="100" />
+          <Property Name="ISO_Names" Type="varchar" MaxLength="5" />
+          <Property Name="Country_ISD_Code" Type="int" />
+        </EntityType>
+        <EntityType Name="EnquiryContacts">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContactGender" Type="varchar" MaxLength="10" />
+          <Property Name="ContactFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="ContactLastName" Type="varchar" MaxLength="50" />
+          <Property Name="ContactDepartment" Type="varchar" MaxLength="50" />
+          <Property Name="ContactAddress" Type="varchar(max)" />
+          <Property Name="ContactDesignation" Type="varchar" MaxLength="50" />
+          <Property Name="ContactCity" Type="varchar" MaxLength="100" />
+          <Property Name="ContactState" Type="varchar" MaxLength="100" />
+          <Property Name="ContactZip" Type="varchar" MaxLength="50" />
+          <Property Name="ContactPhone" Type="varchar" MaxLength="15" />
+          <Property Name="ContactFax" Type="varchar" MaxLength="100" />
+          <Property Name="ContactCellPhone" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="NewProductLaunch">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar(max)" />
+          <Property Name="ProductType" Type="varchar(max)" />
+          <Property Name="ProductPhoto" Type="varchar(max)" />
+          <Property Name="ProductDescription" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="updatedBy" Type="bigint" />
+          <Property Name="businessId" Type="bigint" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CategoryTypeId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="varchar" MaxLength="100" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCompanyIPO">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IPOName" Type="varchar(max)" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Ipoexchange" Type="varchar(max)" />
+          <Property Name="Ipolink" Type="varchar(max)" />
+          <Property Name="ipodescription" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CompanyId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblEvents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BusinessId" Type="bigint" />
+          <Property Name="EventName" Type="varchar(max)" />
+          <Property Name="EventDiscription" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="EventLocation" Type="varchar(max)" />
+          <Property Name="EventImage" Type="varchar(max)" />
+          <Property Name="EventVideo" Type="varchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CountryName" Type="varchar" MaxLength="100" />
+          <Property Name="StateName" Type="varchar" MaxLength="100" />
+          <Property Name="CityName" Type="varchar" MaxLength="100" />
+          <Property Name="EventVenue" Type="varchar(max)" />
+          <Property Name="IsRegistrationOpen" Type="bit" />
+          <Property Name="ShowInsterast" Type="varchar(max)" />
+          <Property Name="EventDate" Type="date" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="EventStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="tblHospital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HospitalOperation" Type="int" />
+          <Property Name="parentcountry" Type="varchar(max)" />
+          <Property Name="parentHospitalName" Type="varchar(max)" />
+          <Property Name="HospitalName" Type="varchar(max)" />
+          <Property Name="Country" Type="varchar(max)" />
+          <Property Name="State" Type="varchar(max)" />
+          <Property Name="City" Type="varchar(max)" />
+          <Property Name="HospitalAddress" Type="varchar(max)" />
+          <Property Name="HospitalWebSite" Type="varchar(max)" />
+          <Property Name="ISDCodes" Type="int" />
+          <Property Name="PhoneNumber" Type="varchar(max)" />
+          <Property Name="HospitalGST" Type="varchar(max)" />
+          <Property Name="HospitalApprovedBody" Type="varchar(max)" />
+          <Property Name="UploadLogo" Type="varchar(max)" />
+          <Property Name="UploadHospitalPhoto" Type="varchar(max)" />
+          <Property Name="HospitalActivities" Type="varchar(max)" />
+          <Property Name="HospitalType" Type="int" />
+          <Property Name="HospitalCapacity" Type="varchar(max)" />
+          <Property Name="HospitalTurnover" Type="varchar(max)" />
+          <Property Name="HospitalEmployee" Type="varchar(max)" />
+          <Property Name="Hospitalestablishment" Type="date" />
+          <Property Name="Associationmember" Type="varchar(max)" />
+          <Property Name="SellingKeywords" Type="varchar(max)" />
+          <Property Name="HospitalDescription" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Newstitle" Type="varchar(max)" />
+          <Property Name="Newstype" Type="int" />
+          <Property Name="Newsdate" Type="date" />
+          <Property Name="Uploadlaunchphoto" Type="varchar(max)" />
+          <Property Name="Newsdescription" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserRoleMapping">
+          <Key>
+            <PropertyRef Name="UserRoleMapId" />
+          </Key>
+          <Property Name="UserRoleMapId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="bigint" />
+          <Property Name="RoleId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="EmailConformation" Type="bit" />
+          <Property Name="SecurityStamp" Type="varchar(max)" />
+          <Property Name="PhoneNumber" Type="varchar(max)" />
+          <Property Name="PhoneNumberConfirmationed" Type="bit" />
+          <Property Name="TwoFactorEnabled" Type="varchar(max)" />
+          <Property Name="LockOutEndDateUtc" Type="date" />
+          <Property Name="LockOutEnbled" Type="bit" />
+          <Property Name="AccessFailedCount" Type="bit" />
+        </EntityType>
+        <Association Name="fk">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoleM__RoleI__5070F446">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_busines">
+          <End Role="BussinessTypes" Type="Self.BussinessTypes" Multiplicity="0..1" />
+          <End Role="tblEvents" Type="Self.tblEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BussinessTypes">
+              <PropertyRef Name="BusinessId" />
+            </Principal>
+            <Dependent Role="tblEvents">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Business">
+          <End Role="BussinessTypes" Type="Self.BussinessTypes" Multiplicity="0..1" />
+          <End Role="CompanyBusiness" Type="Self.CompanyBusiness" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BussinessTypes">
+              <PropertyRef Name="BusinessId" />
+            </Principal>
+            <Dependent Role="CompanyBusiness">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CategoryTypeId">
+          <End Role="CategoriesType" Type="Self.CategoriesType" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriesType">
+              <PropertyRef Name="CategoryTypeId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="CategoryTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Comp">
+          <End Role="EnquiryContacts" Type="Self.EnquiryContacts" Multiplicity="0..1" />
+          <End Role="Companies" Type="Self.Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnquiryContacts">
+              <PropertyRef Name="ContactId" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_CompIpo">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="tblCompanyIPO" Type="Self.tblCompanyIPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="tblCompanyIPO">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_event">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="tblEvents" Type="Self.tblEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblEvents">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_hos">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="tblHospital" Type="Self.tblHospital" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblHospital">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_hosp">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="tblHospital" Type="Self.tblHospital" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblHospital">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_NewProductLaun">
+          <End Role="BussinessTypes" Type="Self.BussinessTypes" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BussinessTypes">
+              <PropertyRef Name="BusinessId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="businessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_NewProductLaunc">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="updatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_NewProductLaunch">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_State">
+          <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="0..1" />
+          <End Role="CitiMaster" Type="Self.CitiMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateMaster">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="CitiMaster">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tblCompanyIPO">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="tblCompanyIPO" Type="Self.tblCompanyIPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblCompanyIPO">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tnlNews">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="tblNews" Type="Self.tblNews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblNews">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="B2BprojectDataModelStoreContainer">
+          <EntitySet Name="BussinessTypes" EntityType="Self.BussinessTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BuyerDetails" EntityType="Self.BuyerDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoriesType" EntityType="Self.CategoriesType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CitiMaster" EntityType="Self.CitiMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyBusiness" EntityType="Self.CompanyBusiness" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EnquiryContacts" EntityType="Self.EnquiryContacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewProductLaunch" EntityType="Self.NewProductLaunch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StateMaster" EntityType="Self.StateMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCompanyIPO" EntityType="Self.tblCompanyIPO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEvents" EntityType="Self.tblEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHospital" EntityType="Self.tblHospital" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNews" EntityType="Self.tblNews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoleMapping" EntityType="Self.UserRoleMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk" Association="Self.fk">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoleM__RoleI__5070F446" Association="Self.FK__UserRoleM__RoleI__5070F446">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="fk_busines" Association="Self.fk_busines">
+            <End Role="BussinessTypes" EntitySet="BussinessTypes" />
+            <End Role="tblEvents" EntitySet="tblEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Business" Association="Self.FK_Business">
+            <End Role="BussinessTypes" EntitySet="BussinessTypes" />
+            <End Role="CompanyBusiness" EntitySet="CompanyBusiness" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CategoryTypeId" Association="Self.fk_CategoryTypeId">
+            <End Role="CategoriesType" EntitySet="CategoriesType" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunch" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Comp" Association="Self.fk_Comp">
+            <End Role="EnquiryContacts" EntitySet="EnquiryContacts" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_CompIpo" Association="Self.Fk_CompIpo">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="tblCompanyIPO" EntitySet="tblCompanyIPO" />
+          </AssociationSet>
+          <AssociationSet Name="fk_event" Association="Self.fk_event">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblEvents" EntitySet="tblEvents" />
+          </AssociationSet>
+          <AssociationSet Name="fk_hos" Association="Self.fk_hos">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblHospital" EntitySet="tblHospital" />
+          </AssociationSet>
+          <AssociationSet Name="fk_hosp" Association="Self.fk_hosp">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblHospital" EntitySet="tblHospital" />
+          </AssociationSet>
+          <AssociationSet Name="fk_NewProductLaun" Association="Self.fk_NewProductLaun">
+            <End Role="BussinessTypes" EntitySet="BussinessTypes" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunch" />
+          </AssociationSet>
+          <AssociationSet Name="fk_NewProductLaunc" Association="Self.fk_NewProductLaunc">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunch" />
+          </AssociationSet>
+          <AssociationSet Name="fk_NewProductLaunch" Association="Self.fk_NewProductLaunch">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunch" />
+          </AssociationSet>
+          <AssociationSet Name="fk_State" Association="Self.fk_State">
+            <End Role="StateMaster" EntitySet="StateMaster" />
+            <End Role="CitiMaster" EntitySet="CitiMaster" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tblCompanyIPO" Association="Self.fk_tblCompanyIPO">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblCompanyIPO" EntitySet="tblCompanyIPO" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tnlNews" Association="Self.fk_tnlNews">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblNews" EntitySet="tblNews" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="B2BprojectDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BussinessType">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+          </Key>
+          <Property Name="BusinessId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="tblEvents" Relationship="Self.fk_busines" FromRole="BussinessTypes" ToRole="tblEvents" />
+          <NavigationProperty Name="CompanyBusinesses" Relationship="Self.FK_Business" FromRole="BussinessTypes" ToRole="CompanyBusiness" />
+          <NavigationProperty Name="NewProductLaunches" Relationship="Self.fk_NewProductLaun" FromRole="BussinessTypes" ToRole="NewProductLaunch" />
+        </EntityType>
+        <EntityType Name="BuyerDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OrgnizationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BuyerEquiryMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CategoriesType">
+          <Key>
+            <PropertyRef Name="CategoryTypeId" />
+          </Key>
+          <Property Name="CategoryTypeId" Type="Int64" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NewProductLaunches" Relationship="Self.fk_CategoryTypeId" FromRole="CategoriesType" ToRole="NewProductLaunch" />
+        </EntityType>
+        <EntityType Name="CitiMaster">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="StateId" Type="Int32" />
+          <NavigationProperty Name="StateMaster" Relationship="Self.fk_State" FromRole="CitiMaster" ToRole="StateMaster" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactId" Type="Int64" />
+          <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyKeyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyOwner" Type="String" MaxLength="286" FixedLength="false" Unicode="false" />
+          <Property Name="CompanayEstablishedyear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ComapanyTotalEmployees" Type="Int64" />
+          <Property Name="CompanyAnnualInCome" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="companyGST" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyCountry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="compapprovalbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Uploadlogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UploadcompanyphotoOn" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EnquiryContact" Relationship="Self.fk_Comp" FromRole="Companies" ToRole="EnquiryContacts" />
+          <NavigationProperty Name="tblCompanyIPOes" Relationship="Self.Fk_CompIpo" FromRole="Companies" ToRole="tblCompanyIPO" />
+        </EntityType>
+        <EntityType Name="CompanyBusiness">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessId" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <NavigationProperty Name="BussinessType" Relationship="Self.FK_Business" FromRole="CompanyBusiness" ToRole="BussinessTypes" />
+        </EntityType>
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ISO_Names" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Country_ISD_Code" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EnquiryContact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContactFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactDepartment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContactDesignation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactState" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ContactFax" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactCellPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Companies" Relationship="Self.fk_Comp" FromRole="EnquiryContacts" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="NewProductLaunch">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="updatedBy" Type="Int64" />
+          <Property Name="businessId" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CategoryTypeId" Type="Int64" />
+          <NavigationProperty Name="BussinessType" Relationship="Self.fk_NewProductLaun" FromRole="NewProductLaunch" ToRole="BussinessTypes" />
+          <NavigationProperty Name="CategoriesType" Relationship="Self.fk_CategoryTypeId" FromRole="NewProductLaunch" ToRole="CategoriesType" />
+          <NavigationProperty Name="User" Relationship="Self.fk_NewProductLaunc" FromRole="NewProductLaunch" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.fk_NewProductLaunch" FromRole="NewProductLaunch" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="UserRoleMappings" Relationship="Self.FK__UserRoleM__RoleI__5070F446" FromRole="Roles" ToRole="UserRoleMapping" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="CitiMasters" Relationship="Self.fk_State" FromRole="StateMaster" ToRole="CitiMaster" />
+        </EntityType>
+        <EntityType Name="tblCompanyIPO">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IPOName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Ipoexchange" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ipolink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ipodescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CompanyId" Type="Int64" />
+          <NavigationProperty Name="Company" Relationship="Self.Fk_CompIpo" FromRole="tblCompanyIPO" ToRole="Companies" />
+          <NavigationProperty Name="User" Relationship="Self.fk_tblCompanyIPO" FromRole="tblCompanyIPO" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="tblEvent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessId" Type="Int64" />
+          <Property Name="EventName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="EventLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EventVenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsRegistrationOpen" Type="Boolean" />
+          <Property Name="ShowInsterast" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Precision="0" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="EventStatus" Type="Int32" />
+          <NavigationProperty Name="BussinessType" Relationship="Self.fk_busines" FromRole="tblEvents" ToRole="BussinessTypes" />
+          <NavigationProperty Name="User" Relationship="Self.fk_event" FromRole="tblEvents" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="tblHospital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HospitalOperation" Type="Int32" />
+          <Property Name="parentcountry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="parentHospitalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalWebSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ISDCodes" Type="Int32" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalGST" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalApprovedBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UploadLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UploadHospitalPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalActivities" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalType" Type="Int32" />
+          <Property Name="HospitalCapacity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalTurnover" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalEmployee" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospitalestablishment" Type="DateTime" Precision="0" />
+          <Property Name="Associationmember" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SellingKeywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HospitalDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="User" Relationship="Self.fk_hos" FromRole="tblHospital" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.fk_hosp" FromRole="tblHospital" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="tblNew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Newstitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Newstype" Type="Int32" />
+          <Property Name="Newsdate" Type="DateTime" Precision="0" />
+          <Property Name="Uploadlaunchphoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Newsdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="User" Relationship="Self.fk_tnlNews" FromRole="tblNews" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UserRoleMapping">
+          <Key>
+            <PropertyRef Name="UserRoleMapId" />
+          </Key>
+          <Property Name="UserRoleMapId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="RoleId" Type="Int64" />
+          <NavigationProperty Name="Role" Relationship="Self.FK__UserRoleM__RoleI__5070F446" FromRole="UserRoleMapping" ToRole="Roles" />
+          <NavigationProperty Name="User" Relationship="Self.fk" FromRole="UserRoleMapping" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="EmailConformation" Type="Boolean" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumberConfirmationed" Type="Boolean" />
+          <Property Name="TwoFactorEnabled" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LockOutEndDateUtc" Type="DateTime" Precision="0" />
+          <Property Name="LockOutEnbled" Type="Boolean" />
+          <Property Name="AccessFailedCount" Type="Boolean" />
+          <NavigationProperty Name="NewProductLaunches" Relationship="Self.fk_NewProductLaunc" FromRole="Users" ToRole="NewProductLaunch" />
+          <NavigationProperty Name="NewProductLaunches1" Relationship="Self.fk_NewProductLaunch" FromRole="Users" ToRole="NewProductLaunch" />
+          <NavigationProperty Name="tblCompanyIPOes" Relationship="Self.fk_tblCompanyIPO" FromRole="Users" ToRole="tblCompanyIPO" />
+          <NavigationProperty Name="tblEvents" Relationship="Self.fk_event" FromRole="Users" ToRole="tblEvents" />
+          <NavigationProperty Name="tblHospitals" Relationship="Self.fk_hos" FromRole="Users" ToRole="tblHospital" />
+          <NavigationProperty Name="tblHospitals1" Relationship="Self.fk_hosp" FromRole="Users" ToRole="tblHospital" />
+          <NavigationProperty Name="tblNews" Relationship="Self.fk_tnlNews" FromRole="Users" ToRole="tblNews" />
+          <NavigationProperty Name="UserRoleMappings" Relationship="Self.fk" FromRole="Users" ToRole="UserRoleMapping" />
+        </EntityType>
+        <Association Name="fk_busines">
+          <End Role="BussinessTypes" Type="Self.BussinessType" Multiplicity="0..1" />
+          <End Role="tblEvents" Type="Self.tblEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BussinessTypes">
+              <PropertyRef Name="BusinessId" />
+            </Principal>
+            <Dependent Role="tblEvents">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Business">
+          <End Role="BussinessTypes" Type="Self.BussinessType" Multiplicity="0..1" />
+          <End Role="CompanyBusiness" Type="Self.CompanyBusiness" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BussinessTypes">
+              <PropertyRef Name="BusinessId" />
+            </Principal>
+            <Dependent Role="CompanyBusiness">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_NewProductLaun">
+          <End Role="BussinessTypes" Type="Self.BussinessType" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BussinessTypes">
+              <PropertyRef Name="BusinessId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="businessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CategoryTypeId">
+          <End Role="CategoriesType" Type="Self.CategoriesType" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriesType">
+              <PropertyRef Name="CategoryTypeId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="CategoryTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_State">
+          <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="0..1" />
+          <End Role="CitiMaster" Type="Self.CitiMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateMaster">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="CitiMaster">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Comp">
+          <End Role="EnquiryContacts" Type="Self.EnquiryContact" Multiplicity="0..1" />
+          <End Role="Companies" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnquiryContacts">
+              <PropertyRef Name="ContactId" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_CompIpo">
+          <End Role="Companies" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="tblCompanyIPO" Type="Self.tblCompanyIPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="tblCompanyIPO">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_NewProductLaunc">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="updatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_NewProductLaunch">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="NewProductLaunch" Type="Self.NewProductLaunch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="NewProductLaunch">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoleM__RoleI__5070F446">
+          <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tblCompanyIPO">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="tblCompanyIPO" Type="Self.tblCompanyIPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblCompanyIPO">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_event">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="tblEvents" Type="Self.tblEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblEvents">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_hos">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="tblHospital" Type="Self.tblHospital" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblHospital">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_hosp">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="tblHospital" Type="Self.tblHospital" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblHospital">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tnlNews">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="tblNews" Type="Self.tblNew" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tblNews">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="B2BprojectDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BussinessTypes" EntityType="Self.BussinessType" />
+          <EntitySet Name="BuyerDetails" EntityType="Self.BuyerDetail" />
+          <EntitySet Name="CategoriesTypes" EntityType="Self.CategoriesType" />
+          <EntitySet Name="CitiMasters" EntityType="Self.CitiMaster" />
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="CompanyBusinesses" EntityType="Self.CompanyBusiness" />
+          <EntitySet Name="CountryMasters" EntityType="Self.CountryMaster" />
+          <EntitySet Name="EnquiryContacts" EntityType="Self.EnquiryContact" />
+          <EntitySet Name="NewProductLaunches" EntityType="Self.NewProductLaunch" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="StateMasters" EntityType="Self.StateMaster" />
+          <EntitySet Name="tblCompanyIPOes" EntityType="Self.tblCompanyIPO" />
+          <EntitySet Name="tblEvents" EntityType="Self.tblEvent" />
+          <EntitySet Name="tblHospitals" EntityType="Self.tblHospital" />
+          <EntitySet Name="tblNews" EntityType="Self.tblNew" />
+          <EntitySet Name="UserRoleMappings" EntityType="Self.UserRoleMapping" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="fk_busines" Association="Self.fk_busines">
+            <End Role="BussinessTypes" EntitySet="BussinessTypes" />
+            <End Role="tblEvents" EntitySet="tblEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Business" Association="Self.FK_Business">
+            <End Role="BussinessTypes" EntitySet="BussinessTypes" />
+            <End Role="CompanyBusiness" EntitySet="CompanyBusinesses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_NewProductLaun" Association="Self.fk_NewProductLaun">
+            <End Role="BussinessTypes" EntitySet="BussinessTypes" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunches" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CategoryTypeId" Association="Self.fk_CategoryTypeId">
+            <End Role="CategoriesType" EntitySet="CategoriesTypes" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunches" />
+          </AssociationSet>
+          <AssociationSet Name="fk_State" Association="Self.fk_State">
+            <End Role="StateMaster" EntitySet="StateMasters" />
+            <End Role="CitiMaster" EntitySet="CitiMasters" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Comp" Association="Self.fk_Comp">
+            <End Role="EnquiryContacts" EntitySet="EnquiryContacts" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_CompIpo" Association="Self.Fk_CompIpo">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="tblCompanyIPO" EntitySet="tblCompanyIPOes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_NewProductLaunc" Association="Self.fk_NewProductLaunc">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunches" />
+          </AssociationSet>
+          <AssociationSet Name="fk_NewProductLaunch" Association="Self.fk_NewProductLaunch">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NewProductLaunch" EntitySet="NewProductLaunches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoleM__RoleI__5070F446" Association="Self.FK__UserRoleM__RoleI__5070F446">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMappings" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tblCompanyIPO" Association="Self.fk_tblCompanyIPO">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblCompanyIPO" EntitySet="tblCompanyIPOes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_event" Association="Self.fk_event">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblEvents" EntitySet="tblEvents" />
+          </AssociationSet>
+          <AssociationSet Name="fk_hos" Association="Self.fk_hos">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblHospital" EntitySet="tblHospitals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_hosp" Association="Self.fk_hosp">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblHospital" EntitySet="tblHospitals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tnlNews" Association="Self.fk_tnlNews">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="tblNews" EntitySet="tblNews" />
+          </AssociationSet>
+          <AssociationSet Name="fk" Association="Self.fk">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMappings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="B2BprojectDataModelStoreContainer" CdmEntityContainer="B2BprojectDataEntities">
+          <EntitySetMapping Name="BussinessTypes">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.BussinessType">
+              <MappingFragment StoreEntitySet="BussinessTypes">
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BuyerDetails">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.BuyerDetail">
+              <MappingFragment StoreEntitySet="BuyerDetails">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="OrgnizationName" ColumnName="OrgnizationName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="BuyerEquiryMsg" ColumnName="BuyerEquiryMsg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriesTypes">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.CategoriesType">
+              <MappingFragment StoreEntitySet="CategoriesType">
+                <ScalarProperty Name="CategoryTypeId" ColumnName="CategoryTypeId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryDiscription" ColumnName="CategoryDiscription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CitiMasters">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.CitiMaster">
+              <MappingFragment StoreEntitySet="CitiMaster">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.Company">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyDiscription" ColumnName="CompanyDiscription" />
+                <ScalarProperty Name="CompanyKeyword" ColumnName="CompanyKeyword" />
+                <ScalarProperty Name="CompanyOwner" ColumnName="CompanyOwner" />
+                <ScalarProperty Name="CompanayEstablishedyear" ColumnName="CompanayEstablishedyear" />
+                <ScalarProperty Name="ComapanyTotalEmployees" ColumnName="ComapanyTotalEmployees" />
+                <ScalarProperty Name="CompanyAnnualInCome" ColumnName="CompanyAnnualInCome" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="companyGST" ColumnName="companyGST" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="CompanyCountry" ColumnName="CompanyCountry" />
+                <ScalarProperty Name="compapprovalbody" ColumnName="compapprovalbody" />
+                <ScalarProperty Name="Uploadlogo" ColumnName="Uploadlogo" />
+                <ScalarProperty Name="UploadcompanyphotoOn" ColumnName="UploadcompanyphotoOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyBusinesses">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.CompanyBusiness">
+              <MappingFragment StoreEntitySet="CompanyBusiness">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CountryMasters">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.CountryMaster">
+              <MappingFragment StoreEntitySet="CountryMaster">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="ISO_Names" ColumnName="ISO_Names" />
+                <ScalarProperty Name="Country_ISD_Code" ColumnName="Country_ISD_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnquiryContacts">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.EnquiryContact">
+              <MappingFragment StoreEntitySet="EnquiryContacts">
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+                <ScalarProperty Name="ContactGender" ColumnName="ContactGender" />
+                <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+                <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+                <ScalarProperty Name="ContactDepartment" ColumnName="ContactDepartment" />
+                <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+                <ScalarProperty Name="ContactDesignation" ColumnName="ContactDesignation" />
+                <ScalarProperty Name="ContactCity" ColumnName="ContactCity" />
+                <ScalarProperty Name="ContactState" ColumnName="ContactState" />
+                <ScalarProperty Name="ContactZip" ColumnName="ContactZip" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactFax" ColumnName="ContactFax" />
+                <ScalarProperty Name="ContactCellPhone" ColumnName="ContactCellPhone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewProductLaunches">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.NewProductLaunch">
+              <MappingFragment StoreEntitySet="NewProductLaunch">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductPhoto" ColumnName="ProductPhoto" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="businessId" ColumnName="businessId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CategoryTypeId" ColumnName="CategoryTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateMasters">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.StateMaster">
+              <MappingFragment StoreEntitySet="StateMaster">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCompanyIPOes">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.tblCompanyIPO">
+              <MappingFragment StoreEntitySet="tblCompanyIPO">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IPOName" ColumnName="IPOName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Ipoexchange" ColumnName="Ipoexchange" />
+                <ScalarProperty Name="Ipolink" ColumnName="Ipolink" />
+                <ScalarProperty Name="ipodescription" ColumnName="ipodescription" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEvents">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.tblEvent">
+              <MappingFragment StoreEntitySet="tblEvents">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="EventDiscription" ColumnName="EventDiscription" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="EventLocation" ColumnName="EventLocation" />
+                <ScalarProperty Name="EventImage" ColumnName="EventImage" />
+                <ScalarProperty Name="EventVideo" ColumnName="EventVideo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="EventVenue" ColumnName="EventVenue" />
+                <ScalarProperty Name="IsRegistrationOpen" ColumnName="IsRegistrationOpen" />
+                <ScalarProperty Name="ShowInsterast" ColumnName="ShowInsterast" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="EventStatus" ColumnName="EventStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHospitals">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.tblHospital">
+              <MappingFragment StoreEntitySet="tblHospital">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HospitalOperation" ColumnName="HospitalOperation" />
+                <ScalarProperty Name="parentcountry" ColumnName="parentcountry" />
+                <ScalarProperty Name="parentHospitalName" ColumnName="parentHospitalName" />
+                <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="HospitalAddress" ColumnName="HospitalAddress" />
+                <ScalarProperty Name="HospitalWebSite" ColumnName="HospitalWebSite" />
+                <ScalarProperty Name="ISDCodes" ColumnName="ISDCodes" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="HospitalGST" ColumnName="HospitalGST" />
+                <ScalarProperty Name="HospitalApprovedBody" ColumnName="HospitalApprovedBody" />
+                <ScalarProperty Name="UploadLogo" ColumnName="UploadLogo" />
+                <ScalarProperty Name="UploadHospitalPhoto" ColumnName="UploadHospitalPhoto" />
+                <ScalarProperty Name="HospitalActivities" ColumnName="HospitalActivities" />
+                <ScalarProperty Name="HospitalType" ColumnName="HospitalType" />
+                <ScalarProperty Name="HospitalCapacity" ColumnName="HospitalCapacity" />
+                <ScalarProperty Name="HospitalTurnover" ColumnName="HospitalTurnover" />
+                <ScalarProperty Name="HospitalEmployee" ColumnName="HospitalEmployee" />
+                <ScalarProperty Name="Hospitalestablishment" ColumnName="Hospitalestablishment" />
+                <ScalarProperty Name="Associationmember" ColumnName="Associationmember" />
+                <ScalarProperty Name="SellingKeywords" ColumnName="SellingKeywords" />
+                <ScalarProperty Name="HospitalDescription" ColumnName="HospitalDescription" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNews">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.tblNew">
+              <MappingFragment StoreEntitySet="tblNews">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Newstitle" ColumnName="Newstitle" />
+                <ScalarProperty Name="Newstype" ColumnName="Newstype" />
+                <ScalarProperty Name="Newsdate" ColumnName="Newsdate" />
+                <ScalarProperty Name="Uploadlaunchphoto" ColumnName="Uploadlaunchphoto" />
+                <ScalarProperty Name="Newsdescription" ColumnName="Newsdescription" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoleMappings">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.UserRoleMapping">
+              <MappingFragment StoreEntitySet="UserRoleMapping">
+                <ScalarProperty Name="UserRoleMapId" ColumnName="UserRoleMapId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="B2BprojectDataModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EmailConformation" ColumnName="EmailConformation" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmationed" ColumnName="PhoneNumberConfirmationed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockOutEndDateUtc" ColumnName="LockOutEndDateUtc" />
+                <ScalarProperty Name="LockOutEnbled" ColumnName="LockOutEnbled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

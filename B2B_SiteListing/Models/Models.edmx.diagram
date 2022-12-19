@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bb8393bcfba64c3b8467f1c4f0278949" Name="Diagram1">
+        <EntityTypeShape EntityType="B2BprojectDataModel.BussinessType" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.BuyerDetail" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.CategoriesType" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.CitiMaster" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.Company" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.CompanyBusiness" Width="1.5" PointX="3" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.CountryMaster" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.EnquiryContact" Width="1.5" PointX="1.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.NewProductLaunch" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.Role" Width="1.5" PointX="0.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.StateMaster" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.tblCompanyIPO" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.tblEvent" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.tblHospital" Width="1.5" PointX="3" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.tblNew" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.UserRoleMapping" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="B2BprojectDataModel.User" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_busines" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.FK_Business" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_NewProductLaun" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_CategoryTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_State" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_Comp" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.Fk_CompIpo" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_NewProductLaunc" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_NewProductLaunch" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.FK__UserRoleM__RoleI__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_tblCompanyIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_event" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_hos" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_hosp" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk_tnlNews" ManuallyRouted="false" />
+        <AssociationConnector Association="B2BprojectDataModel.fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
